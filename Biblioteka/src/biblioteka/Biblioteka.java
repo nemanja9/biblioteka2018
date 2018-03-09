@@ -33,7 +33,7 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 	@Override
 	public LinkedList<Knjiga> pronadjiSveKnjigu(String naslov, Autor autor, String isbn, String izdavac) {
-		
+		// ovo je okej komentar
 		if (naslov==null)
 			throw new RuntimeException("Morate uneti naslov");
 
