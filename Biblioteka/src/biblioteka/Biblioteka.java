@@ -6,28 +6,37 @@ import biblioteka.interfejs.BibliotekaInterfejs;
 
 public class Biblioteka implements BibliotekaInterfejs {
 
+	
+	private LinkedList <Knjiga> knjige = new LinkedList<>();
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
-		// TODO Auto-generated method stub
+		
+		knjige.add(knjiga);
 		
 	}
 
 	@Override
 	public void obrisiKnjigu(Knjiga knjiga) {
-		// TODO Auto-generated method stub
+		knjige.remove(knjiga);
 		
 	}
 
 	@Override
 	public LinkedList<Knjiga> vratiSveKnjige() {
-		// TODO Auto-generated method stub
-		return null;
+		return knjige;
+		
 	}
 
 	@Override
 	public LinkedList<Knjiga> pronadjiSveKnjigu(String naslov, Autor autor, String isbn, String izdavac) {
-		// TODO Auto-generated method stub
-		return null;
+		LinkedList<Knjiga> novaLista = new LinkedList<>();
+		
+		for (int i = 0; i < knjige.size(); i++) {
+			if(knjige.get(i).getNaslov().contains(naslov))
+				novaLista.add(knjige.get(i));
+			
+		}
+		return novaLista;
 	}
 
 }
